@@ -19,7 +19,66 @@ class home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('homepage');
+		$config= array(
+			array(
+	            'field'   => 'nom_artiste', 
+	            'label'   => 'nom artiste', 
+	            'rules'   => 'required|xss_clean'
+            ),
+            array(
+	            'field'   => 'pays', 
+	            'label'   => 'pays residence', 
+	            'rules'   => 'required'
+            ),
+            array(
+	            'field'   => 'responsable', 
+	            'label'   => 'nom responsable', 
+	            'rules'   => 'required|xss_clean'
+            ),
+            array(
+	            'field'   => 'email', 
+	            'label'   => 'Email', 
+	            'rules'   => 'required|xss_clean|valid_email'
+            ),
+            array(
+	            'field'   => 'telephone', 
+	            'label'   => 'telephone', 
+	            'rules'   => 'xss_clean'
+            ),
+            array(
+	            'field'   => 'nbpers', 
+	            'label'   => 'Nb personnes', 
+	            'rules'   => 'required|xss_clean|greater_than[0]'
+            ),
+            array(
+	            'field'   => 'transport', 
+	            'label'   => 'transport international', 
+	            'rules'   => 'required'
+            ),
+            array(
+	            'field'   => 'siteweb', 
+	            'label'   => 'site web', 
+	            'rules'   => 'xss_clean'
+            ),
+            array(
+	            'field'   => 'youtube', 
+	            'label'   => 'youtube', 
+	            'rules'   => 'xss_clean'
+            )
+		);
+
+		$this->form_validation->set_rules($config);
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('homepage');
+		}
+		else
+		{
+			$data['success_message']="Votre Formulaire a été envoyé avec succès, vous recevrez dans votre boîte mail un message de confirmation";
+			$this->load->view('homepage',$data);
+
+		}
 	}
 }
 

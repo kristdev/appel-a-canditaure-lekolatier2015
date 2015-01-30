@@ -4,8 +4,20 @@
 		"selected_items":
 		[
 			[
+				"co",
+				"config"
+			],
+			[
 				"ba",
-				"background-attachment"
+				"background"
+			],
+			[
+				"n",
+				"name	Attr"
+			],
+			[
+				"b",
+				"assets/images/bg-left	jpg"
 			],
 			[
 				"padd",
@@ -68,14 +80,6 @@
 				"verbose_module	AngularJS"
 			],
 			[
-				"co",
-				"controller	AngularJS"
-			],
-			[
-				"b",
-				"bs3-col	bs3-col"
-			],
-			[
 				"nb",
 				"nbarticles"
 			]
@@ -83,6 +87,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "application/controllers/home.php",
+			"settings":
+			{
+				"buffer_size": 1631,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/homepage.php",
+			"settings":
+			{
+				"buffer_size": 8567,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/config/config.php",
+			"settings":
+			{
+				"buffer_size": 12808,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/config/autoload.php",
+			"settings":
+			{
+				"buffer_size": 3128,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/config/routes.php",
+			"settings":
+			{
+				"buffer_size": 1540,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -92,7 +136,7 @@
 		[
 			[
 				"Package Control: ",
-				"Package Control: List Packages"
+				"Package Control: Install Package"
 			],
 			[
 				"Package Control: g",
@@ -124,6 +168,11 @@
 	},
 	"file_history":
 	[
+		"/C/Users/HP/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/HP/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/HP/AppData/Roaming/Sublime Text 3/Packages/Alignment/Base File.sublime-settings",
+		"/C/wamp/www/lekolatier2015_candappform/assets/bootstrap/css/test.css",
+		"/C/wamp/www/lekolatier2015_candappform/index.html",
 		"/C/Users/HP/.gitconfig",
 		"/C/Users/HP/AppData/Local/Temp/scp21415/public_html/map.xml",
 		"/C/Users/HP/AppData/Local/Temp/scp27009/public_html/application/modules/home/views/homepage.php",
@@ -132,7 +181,6 @@
 		"/C/Users/HP/AppData/Local/Temp/scp49861/public_html/robots.txt",
 		"/C/Users/HP/AppData/Local/Temp/scp21176/public_html/sitemap.xml",
 		"/C/Users/HP/AppData/Local/Temp/scp24302/public_html/sitemap(1).xml",
-		"/C/wamp/www/lekolatier2015_candappform/index.html",
 		"/C/wamp/www/lekolatier2015_candappform/assets/jquery.urlive/jquery.urlive.min.js",
 		"/C/wamp/www/lekolatier2015_candappform/assets/jquery.urlive/jquery.urlive.css",
 		"/C/wamp/www/lekolatier2015_candappform/assets/jquery-file-upload/js/main.js",
@@ -249,6 +297,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"color",
+			"#",
+			"tab",
+			"xs",
 			"href=\"\"",
 			"href=\"",
 			"urlive-container",
@@ -320,8 +372,146 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "application/controllers/home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1631,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1246,
+								1246
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/views/homepage.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8567,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1301,
+								1301
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1234.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/config/config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12808,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								502,
+								502
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "application/config/autoload.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1541,
+								1541
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "application/config/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1430,
+								1430
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

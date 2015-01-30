@@ -67,6 +67,16 @@
 				</div>
 			</div>
 
+			<?php 
+				if(isset($success_message)){
+			?>
+			<div class="row text-success well">
+				<p><?php echo $success_message; ?></p>
+			</div>
+
+			<?php
+				}
+			?>
 			<form action="<?php echo base_url(); ?>" method="POST">
 				<div class="panel panel-default">
 				  <div class="panel-heading">
@@ -79,13 +89,14 @@
 				    			<i class="fa fa-users fa-stack text-primary"></i> Nom de l'Artiste: 
 				    		</label>
 					    	<input name="nom_artiste" type="text" class="form-control" id="nom_artiste" placeholder="Nom Artiste" value="<?php echo set_value('nom_artiste'); ?>">
+				    		<?php echo form_error('nom_artiste'); ?>
 				    	</div>
 				    	<div class="col-md-6 form-group">
 				    		<label class="" for="pays">
 				    			<i class="fa fa-arrows-v fa-stack text-primary"></i> Pays de résidence: 
 				    		</label>
 						    <select name="pays" id="pays" class="form-control">
-						    	<option value="">Choisir un pays</option>
+						    	<option value="Cameroun" <?php echo set_select('pays', 'Cameroun'); ?>>Cameroun</option>
 						    </select>
 				    	</div>
 					</div>
@@ -95,13 +106,15 @@
 				    		<label class="" for="responsable">
 				    			<i class="fa fa-user fa-stack text-primary"></i> Nom Responsable: 
 			    			</label>
-					    	<input type="text" class="form-control" id="responsable" placeholder="Responsable">
+					    	<input name="responsable" type="text" class="form-control" id="responsable" placeholder="Responsable" <?php echo set_value('responsable'); ?>>
+					    	<?php echo form_error('responsable'); ?>
 				    	</div>
 				    	<div class="col-md-6 form-group">
 				    		<label class="" for="pays">
 				    			<i class="fa fa-envelope fa-stack text-primary"></i> Email: 
 			    			</label>
 						    <input name="email" type="email" class="form-control" id="email" placeholder="Email Artiste" value="<?php echo set_value('email'); ?>">
+						    <?php echo form_error('email'); ?>
 				    	</div>
 					</div>
 					<hr>
@@ -114,6 +127,7 @@
 					    	<button class="btn btn-primary">+</button>
 					    	<!-- <input type="telephone" class="form-control" id="responsable" placeholder="Tel">
 					    	<button class="btn btn-danger">-</button> -->
+					    	<?php echo form_error('telephone'); ?>
 				    	</div>
 				    	<div class="form-group col-md-6">
 				    		<div class="row">
@@ -125,34 +139,35 @@
 					    		<div class="col-md-3">
 					    			<input type="number" class="form-control" id="nbpers" style="width:60px;">
 					    		</div>
+					    		<?php echo form_error('nbpers'); ?>
 				    		</div>
 				    	</div>
 					</div>
 					<hr>
 					<div class="row form-inline">
 					    <div class="form-group col-md-12">
-				    		<label class="" for="ti">
+				    		<label class="" for="transport">
 				    			<i class="fa fa-plane text-primary"></i> Transport international en charge du Groupe: 
 			    			</label>
 			    			<label class="radio-inline">
-							  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Oui
+							  <input type="radio" name="transport" id="inlineRadio1" value="oui" <?php echo set_radio('transport', 'oui'); ?> checked> Oui
 							</label>
 							<label class="radio-inline">
-							  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Non
+							  <input type="radio" name="transport" id="inlineRadio2" value="non" <?php echo set_radio('transport', 'non'); ?>> Non
 							</label>
-					    	<!-- <input type="telephone" class="form-control" id="responsable" placeholder="Tel">
-					    	<button class="btn btn-danger">-</button> -->
 				    	</div>
 					</div>
 					<hr>
 					<div class="row form-inline">
 					    <div class="form-group col-md-6">
 				    		<label class="" for="siteweb"><i class="fa fa-cloud fa-stack text-primary"></i> Site web: </label>
-					    	<input type="telephone" class="form-control" id="siteweb" placeholder="Votre Site web">
+					    	<input name="siteweb" type="url" class="form-control" id="siteweb" placeholder="Votre Site web" value="<?php echo set_value('siteweb'); ?>">
+				    		<?php echo form_error('siteweb'); ?>
 				    	</div>
 				    	<div class="form-group col-md-6">
 				    		<label class="" for="youtube"><i class="fa fa-youtube text-primary"></i> Lien youtube: </label>
-					    	<input type="telephone" class="form-control" id="youtube" placeholder="Votre chaîne youtube">
+					    	<input name="youtube" type="url" class="form-control" id="youtube" placeholder="Votre chaîne youtube" value="<?php echo set_value('youtube'); ?>">
+				    		<?php echo form_error('youtube'); ?>
 				    	</div>
 					</div>
 					<hr>
@@ -172,11 +187,13 @@
 					<div class="row form-inline">
 					    <div class="form-group col-md-6">
 				    		<label class="" for="titre1"><i class="fa fa-upload text-primary"></i> Tire no 1: <span class="small text-danger"></span></label>
-					    	<input type="file" id="titre1">
+					    	<input type="file" id="titre1" name="titre1">
+					    	<?php echo form_error('titre1'); ?>
 				    	</div>
 				    	<div class="form-group col-md-6">
 				    		<label class="" for="titre2"><i class="fa fa-upload text-primary"></i> Tire no 2: <span class="small text-danger"></span></label>
-					    	<input type="file" id="titre2">
+					    	<input type="file" id="titre2" name="titre2">
+					    	<?php echo form_error('titre2'); ?>
 				    	</div>
 					</div>
 				  </div>
@@ -238,6 +255,7 @@
 		        }
 		    });
 		}).trigger('input');
+		
 	</script>
 </body>
 </html>
