@@ -124,6 +124,14 @@
 	},
 	"file_history":
 	[
+		"/C/Users/HP/.gitconfig",
+		"/C/Users/HP/AppData/Local/Temp/scp21415/public_html/map.xml",
+		"/C/Users/HP/AppData/Local/Temp/scp27009/public_html/application/modules/home/views/homepage.php",
+		"/C/Users/HP/.ssh/github_rsa.pub",
+		"/C/Users/HP/.ssh/id_rsa.pub",
+		"/C/Users/HP/AppData/Local/Temp/scp49861/public_html/robots.txt",
+		"/C/Users/HP/AppData/Local/Temp/scp21176/public_html/sitemap.xml",
+		"/C/Users/HP/AppData/Local/Temp/scp24302/public_html/sitemap(1).xml",
 		"/C/wamp/www/lekolatier2015_candappform/index.html",
 		"/C/wamp/www/lekolatier2015_candappform/assets/jquery.urlive/jquery.urlive.min.js",
 		"/C/wamp/www/lekolatier2015_candappform/assets/jquery.urlive/jquery.urlive.css",
@@ -241,6 +249,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"href=\"\"",
+			"href=\"",
 			"urlive-container",
 			"},\n",
 			"textarea",
@@ -284,6 +294,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"href=\"#\"",
 			"assets/image/",
 			"assets/js/",
 			"assets/code.jquery.com/",

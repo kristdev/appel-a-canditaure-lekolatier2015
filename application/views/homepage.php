@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 
-
+	
 	<title>Le Kolatier 2015 Candidature Application Form</title>
 
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -13,16 +13,24 @@
 	<style>
 		body{
 			padding-top: 30px;
+			background: url('assets/images/bg.png');
+			background-repeat: repeat;
+			background-attachment: fixed;
 		}
 
 		.page-header h1{
 			padding-left: 10px;
 		}
 
+		.page-header h5{
+			padding-right: 20px;
+		}
+
 		.bg-top-right{
-			background: url('assets/images/bg-top-right.jpg');
+			background: url('assets/images/bg-top-right.png');
 			background-repeat: no-repeat;
 			background-position: top right;
+			background-clip: 20px;
 		}
 
 		.bg-right{
@@ -43,19 +51,23 @@
 			display: none;
 		}
 	</style>
+
+	<!-- Favicons -->
+	<!-- <link rel="apple-touch-icon" href="../apple-touch-icon.png"> -->
+	<link rel="icon" href="assets/images/icons/logo.ico">
 </head>
-<body class="bg-right">
+<body>
 	<!-- Main wrapper -->
 	<div class="container">
 		<div class="col-md-10 col-md-offset-1 panel panel-default">
 			<div class="row bg-top-right">
 				<div class="page-header">
 					<h1> <span class=""><img src="assets/images/logo.png" style="width:100px" alt=""></span> Appel à canditature de groupe </h1>
-					<div class="pull-right"><h4 class="text-danger">Date de Cloture: 15/05/2015</h4></div>
+					<div class="pull-right"><h5 class="text-danger">Date de Cloture: 15/05/2015</h5></div>
 				</div>
 			</div>
 
-			<form action="" method="POST">
+			<form action="<?php echo base_url(); ?>" method="POST">
 				<div class="panel panel-default">
 				  <div class="panel-heading">
 				    <h3 class="panel-title">Informations sur le groupe</h3>
@@ -66,7 +78,7 @@
 				    		<label class="" for="nom_artiste">
 				    			<i class="fa fa-users fa-stack text-primary"></i> Nom de l'Artiste: 
 				    		</label>
-					    	<input type="text" class="form-control" id="nom_artiste" placeholder="Nom Artiste">
+					    	<input name="nom_artiste" type="text" class="form-control" id="nom_artiste" placeholder="Nom Artiste" value="<?php echo set_value('nom_artiste'); ?>">
 				    	</div>
 				    	<div class="col-md-6 form-group">
 				    		<label class="" for="pays">
@@ -89,7 +101,7 @@
 				    		<label class="" for="pays">
 				    			<i class="fa fa-envelope fa-stack text-primary"></i> Email: 
 			    			</label>
-						    <input type="email" class="form-control" id="email" placeholder="Email Artiste">
+						    <input name="email" type="email" class="form-control" id="email" placeholder="Email Artiste" value="<?php echo set_value('email'); ?>">
 				    	</div>
 					</div>
 					<hr>
@@ -98,16 +110,38 @@
 				    		<label class="" for="tel">
 				    			<i class="fa fa-mobile fa-stack text-primary"></i> Telephone: 
 			    			</label>
-					    	<input type="telephone" class="form-control" id="responsable" placeholder="Tel">
+					    	<input name="telephone" type="telephone" class="form-control" id="responsable" placeholder="Tel" value="<?php echo set_value('telephone'); ?>">
 					    	<button class="btn btn-primary">+</button>
 					    	<!-- <input type="telephone" class="form-control" id="responsable" placeholder="Tel">
 					    	<button class="btn btn-danger">-</button> -->
 				    	</div>
 				    	<div class="form-group col-md-6">
-				    		<label class="" for="nbpers">
-				    			<i class="fa fa-mobile fa-stack text-primary"></i> Nombre de personnes en tournée: 
+				    		<div class="row">
+				    			<div class="col-md-9">
+						    		<label class="" for="nbpers">
+						    			<i class="fa fa-users fa-stack text-primary"></i> Nombre de personnes en tournée: 
+					    			</label>
+				    			</div>
+					    		<div class="col-md-3">
+					    			<input type="number" class="form-control" id="nbpers" style="width:60px;">
+					    		</div>
+				    		</div>
+				    	</div>
+					</div>
+					<hr>
+					<div class="row form-inline">
+					    <div class="form-group col-md-12">
+				    		<label class="" for="ti">
+				    			<i class="fa fa-plane text-primary"></i> Transport international en charge du Groupe: 
 			    			</label>
-					    	<input type="number" class="form-control" id="nbpers" class="small">
+			    			<label class="radio-inline">
+							  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Oui
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Non
+							</label>
+					    	<!-- <input type="telephone" class="form-control" id="responsable" placeholder="Tel">
+					    	<button class="btn btn-danger">-</button> -->
 				    	</div>
 					</div>
 					<hr>

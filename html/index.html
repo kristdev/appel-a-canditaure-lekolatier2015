@@ -13,16 +13,24 @@
 	<style>
 		body{
 			padding-top: 30px;
+			background: url('assets/images/bg.png');
+			background-repeat: repeat;
+			background-attachment: fixed;
 		}
 
 		.page-header h1{
 			padding-left: 10px;
 		}
 
+		.page-header h5{
+			padding-right: 20px;
+		}
+
 		.bg-top-right{
-			background: url('assets/images/bg-top-right.jpg');
+			background: url('assets/images/bg-top-right.png');
 			background-repeat: no-repeat;
 			background-position: top right;
+			background-clip: 20px;
 		}
 
 		.bg-right{
@@ -44,14 +52,14 @@
 		}
 	</style>
 </head>
-<body class="bg-right">
+<body>
 	<!-- Main wrapper -->
 	<div class="container">
 		<div class="col-md-10 col-md-offset-1 panel panel-default">
 			<div class="row bg-top-right">
 				<div class="page-header">
 					<h1> <span class=""><img src="assets/images/logo.png" style="width:100px" alt=""></span> Appel à canditature de groupe </h1>
-					<div class="pull-right"><h4 class="text-danger">Date de Cloture: 15/05/2015</h4></div>
+					<div class="pull-right"><h5 class="text-danger">Date de Cloture: 15/05/2015</h5></div>
 				</div>
 			</div>
 
@@ -66,7 +74,7 @@
 				    		<label class="" for="nom_artiste">
 				    			<i class="fa fa-users fa-stack text-primary"></i> Nom de l'Artiste: 
 				    		</label>
-					    	<input type="text" class="form-control" id="nom_artiste" placeholder="Nom Artiste">
+					    	<input type="text" class="form-control" id="nom_artiste" placeholder="Nom Artiste" required>
 				    	</div>
 				    	<div class="col-md-6 form-group">
 				    		<label class="" for="pays">
@@ -104,10 +112,32 @@
 					    	<button class="btn btn-danger">-</button> -->
 				    	</div>
 				    	<div class="form-group col-md-6">
-				    		<label class="" for="nbpers">
-				    			<i class="fa fa-mobile fa-stack text-primary"></i> Nombre de personnes en tournée: 
+				    		<div class="row">
+				    			<div class="col-md-9">
+						    		<label class="" for="nbpers">
+						    			<i class="fa fa-users fa-stack text-primary"></i> Nombre de personnes en tournée: 
+					    			</label>
+				    			</div>
+					    		<div class="col-md-3">
+					    			<input type="number" class="form-control" id="nbpers" style="width:60px;">
+					    		</div>
+				    		</div>
+				    	</div>
+					</div>
+					<hr>
+					<div class="row form-inline">
+					    <div class="form-group col-md-12">
+				    		<label class="" for="ti">
+				    			<i class="fa fa-plane text-primary"></i> Transport international en charge du Groupe: 
 			    			</label>
-					    	<input type="number" class="form-control" id="nbpers" class="small">
+			    			<label class="radio-inline">
+							  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Oui
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Non
+							</label>
+					    	<!-- <input type="telephone" class="form-control" id="responsable" placeholder="Tel">
+					    	<button class="btn btn-danger">-</button> -->
 				    	</div>
 					</div>
 					<hr>
