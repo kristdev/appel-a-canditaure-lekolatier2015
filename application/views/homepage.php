@@ -86,14 +86,14 @@
 				    <div class="row form-inline">
 				    	<div class="col-md-6 form-group">
 				    		<label class="" for="nom_artiste">
-				    			<i class="fa fa-users fa-stack text-primary"></i> Nom de l'Artiste: 
+				    			<i class="fa fa-users fa-stack text-primary"></i> Nom de l'Artiste: <span class="text-danger"><smal>(*)</smal></span>
 				    		</label>
 					    	<input name="nom_artiste" type="text" class="form-control" id="nom_artiste" placeholder="Nom Artiste" value="<?php echo set_value('nom_artiste'); ?>">
 				    		<?php echo form_error('nom_artiste'); ?>
 				    	</div>
 				    	<div class="col-md-6 form-group">
 				    		<label class="" for="pays">
-				    			<i class="fa fa-arrows-v fa-stack text-primary"></i> Pays de résidence: 
+				    			<i class="fa fa-arrows-v fa-stack text-primary"></i> Pays de résidence: <span class="text-danger"><smal>(*)</smal></span>
 				    		</label>
 						    <select name="pays" id="pays" class="form-control">
 						    	<option value="Cameroun" <?php echo set_select('pays', 'Cameroun'); ?>>Cameroun</option>
@@ -104,14 +104,14 @@
 					<div class="row form-inline">
 					    <div class="col-md-6 form-group">
 				    		<label class="" for="responsable">
-				    			<i class="fa fa-user fa-stack text-primary"></i> Nom Responsable: 
+				    			<i class="fa fa-user fa-stack text-primary"></i> Nom Responsable: <span class="text-danger"><smal>(*)</smal></span>
 			    			</label>
 					    	<input name="responsable" type="text" class="form-control" id="responsable" placeholder="Responsable" <?php echo set_value('responsable'); ?>>
 					    	<?php echo form_error('responsable'); ?>
 				    	</div>
 				    	<div class="col-md-6 form-group">
 				    		<label class="" for="pays">
-				    			<i class="fa fa-envelope fa-stack text-primary"></i> Email: 
+				    			<i class="fa fa-envelope fa-stack text-primary"></i> Email: <span class="text-danger"><smal>(*)</smal></span>
 			    			</label>
 						    <input name="email" type="email" class="form-control" id="email" placeholder="Email Artiste" value="<?php echo set_value('email'); ?>">
 						    <?php echo form_error('email'); ?>
@@ -124,7 +124,7 @@
 				    			<i class="fa fa-mobile fa-stack text-primary"></i> Telephone: 
 			    			</label>
 					    	<input name="telephone" type="telephone" class="form-control" id="responsable" placeholder="Tel" value="<?php echo set_value('telephone'); ?>">
-					    	<button class="btn btn-primary">+</button>
+					    	<!-- <button class="btn btn-primary">+</button> -->
 					    	<!-- <input type="telephone" class="form-control" id="responsable" placeholder="Tel">
 					    	<button class="btn btn-danger">-</button> -->
 					    	<?php echo form_error('telephone'); ?>
@@ -133,7 +133,7 @@
 				    		<div class="row">
 				    			<div class="col-md-9">
 						    		<label class="" for="nbpers">
-						    			<i class="fa fa-users fa-stack text-primary"></i> Nombre de personnes en tournée: 
+						    			<i class="fa fa-users fa-stack text-primary"></i> Nombre de personnes en tournée: <span class="text-danger"><smal>(*)</smal></span>
 					    			</label>
 				    			</div>
 					    		<div class="col-md-3">
@@ -147,7 +147,7 @@
 					<div class="row form-inline">
 					    <div class="form-group col-md-12">
 				    		<label class="" for="transport">
-				    			<i class="fa fa-plane text-primary"></i> Transport international en charge du Groupe: 
+				    			<i class="fa fa-plane text-primary"></i> Transport international en charge du Groupe: <span class="text-danger"><smal>(*)</smal></span>
 			    			</label>
 			    			<label class="radio-inline">
 							  <input type="radio" name="transport" id="inlineRadio1" value="oui" <?php echo set_radio('transport', 'oui'); ?> checked> Oui
@@ -186,12 +186,12 @@
 				  <div class="panel-body">
 					<div class="row form-inline">
 					    <div class="form-group col-md-6">
-				    		<label class="" for="titre1"><i class="fa fa-upload text-primary"></i> Tire no 1: <span class="small text-danger"></span></label>
+				    		<label class="" for="titre1"><i class="fa fa-upload text-primary"></i> Tire no 1: <span class="text-danger"><smal>(.wav)</smal></span> <span class="small text-danger"></span></label>
 					    	<input type="file" id="titre1" name="titre1">
 					    	<?php echo form_error('titre1'); ?>
 				    	</div>
 				    	<div class="form-group col-md-6">
-				    		<label class="" for="titre2"><i class="fa fa-upload text-primary"></i> Tire no 2: <span class="small text-danger"></span></label>
+				    		<label class="" for="titre2"><i class="fa fa-upload text-primary"></i> Tire no 2: <span class="text-danger"><smal>(.wav)</smal></span> <span class="small text-danger"></span></label>
 					    	<input type="file" id="titre2" name="titre2">
 					    	<?php echo form_error('titre2'); ?>
 				    	</div>

@@ -64,6 +64,16 @@ class home extends CI_Controller {
 	            'field'   => 'youtube', 
 	            'label'   => 'youtube', 
 	            'rules'   => 'xss_clean'
+            ),
+            array(
+	            'field'   => 'titre1', 
+	            'label'   => 'titre 1', 
+	            'rules'   => 'required'
+            ),
+            array(
+	            'field'   => 'titre2', 
+	            'label'   => 'titre 2', 
+	            'rules'   => 'required'
             )
 		);
 
@@ -71,13 +81,31 @@ class home extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
+			$this->form_validation->set_error_delimiters('<p class="text-warning">', '</p>');
 			$this->load->view('homepage');
 		}
 		else
 		{
-			$data['success_message']="Votre Formulaire a été envoyé avec succès, vous recevrez dans votre boîte mail un message de confirmation";
-			$this->load->view('homepage',$data);
+			// Upload config
+			$config['upload_path'] = './uploads/';
+			$config['allowed_types'] = 'wav';
+			$config['encrypt_name'] = true;
+			$config['remove_spaces'] = true;
+			// Fin config
 
+			// Initialize config
+			$this->upload->initialize($config);
+			// Fin initialize
+
+			if ( ! $this->upload->do_upload()){
+				$data['error'] = array('error' => $this->upload->display_errors('<p class="text-danger">', '</p>'));
+
+				$this->load->view('homepage', $data);
+			}
+			else{
+				$data['success_message']="Votre Formulaire a été envoyé avec succès, vous recevrez dans votre boîte mail un message de confirmation";
+				$this->load->view('homepage',$data);
+			}
 		}
 	}
 }
