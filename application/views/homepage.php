@@ -6,14 +6,14 @@
 	
 	<title>Le Kolatier 2015 Candidature Application Form</title>
 
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/jquery.urlive/jquery.urlive.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/jquery.urlive/jquery.urlive.css">
 
 	<style>
 		body{
 			padding-top: 30px;
-			background: url('assets/images/bg.png');
+			background: url('<?php echo base_url(); ?>assets/images/bg.png');
 			background-repeat: repeat;
 			background-attachment: fixed;
 		}
@@ -27,21 +27,21 @@
 		}
 
 		.bg-top-right{
-			background: url('assets/images/bg-top-right.png');
+			background: url('<?php echo base_url(); ?>assets/images/bg-top-right.png');
 			background-repeat: no-repeat;
 			background-position: top right;
 			background-clip: 20px;
 		}
 
 		.bg-right{
-			background: url('assets/images/bg-right.jpg');
+			background: url('<?php echo base_url(); ?>assets/images/bg-right.jpg');
 			background-repeat: no-repeat;
 			background-position: top right;
 			background-attachment: fixed;
 		}
 
 		.bg-left{
-			background: url('assets/images/bg-left.jpg');
+			background: url('<?php echo base_url(); ?>assets/images/bg-left.jpg');
 			background-repeat: no-repeat;
 			background-position: left;
 			background-attachment: fixed;
@@ -54,7 +54,7 @@
 
 	<!-- Favicons -->
 	<!-- <link rel="apple-touch-icon" href="../apple-touch-icon.png"> -->
-	<link rel="icon" href="assets/images/icons/logo.ico">
+	<link rel="icon" href="<?php echo base_url(); ?>assets/images/icons/logo.ico">
 </head>
 <body>
 	<!-- Main wrapper -->
@@ -62,7 +62,7 @@
 		<div class="col-md-10 col-md-offset-1 panel panel-default">
 			<div class="row bg-top-right">
 				<div class="page-header">
-					<h1> <span class=""><img src="assets/images/logo.png" style="width:100px" alt=""></span> Appel à canditature de groupe </h1>
+					<h1> <span class=""><img src="<?php echo base_url(); ?>assets/images/logo.png" style="width:100px" alt=""></span> Appel à canditature de groupe </h1>
 					<div class="pull-right"><h5 class="text-danger">Date de Cloture: 15/05/2015</h5></div>
 				</div>
 			</div>
@@ -77,7 +77,18 @@
 			<?php
 				}
 			?>
-			<form action="<?php echo base_url(); ?>" method="POST">
+
+			<?php 
+				if(isset($upload_error)){	
+			?>
+					<div class="row text-danger well">
+						<p><?php echo $upload_error; ?></p>
+					</div>
+			<?php						
+				}
+			?>
+
+			<form action="<?php echo base_url(); ?>" method="POST" enctype="multipart/form-data">
 				<div class="panel panel-default">
 				  <div class="panel-heading">
 				    <h3 class="panel-title">Informations sur le groupe</h3>
@@ -95,9 +106,7 @@
 				    		<label class="" for="pays">
 				    			<i class="fa fa-arrows-v fa-stack text-primary"></i> Pays de résidence: <span class="text-danger"><smal>(*)</smal></span>
 				    		</label>
-						    <select name="pays" id="pays" class="form-control">
-						    	<option value="Cameroun" <?php echo set_select('pays', 'Cameroun'); ?>>Cameroun</option>
-						    </select>
+				    		<input name="pays" type="text" class="form-control" id="pays" placeholder="Pays" value="<?php echo set_value('pays'); ?>">
 				    	</div>
 					</div>
 					<hr>
@@ -106,7 +115,7 @@
 				    		<label class="" for="responsable">
 				    			<i class="fa fa-user fa-stack text-primary"></i> Nom Responsable: <span class="text-danger"><smal>(*)</smal></span>
 			    			</label>
-					    	<input name="responsable" type="text" class="form-control" id="responsable" placeholder="Responsable" <?php echo set_value('responsable'); ?>>
+					    	<input name="responsable" type="text" class="form-control" id="responsable" placeholder="Responsable" value="<?php echo set_value('responsable'); ?>">
 					    	<?php echo form_error('responsable'); ?>
 				    	</div>
 				    	<div class="col-md-6 form-group">
@@ -137,7 +146,7 @@
 					    			</label>
 				    			</div>
 					    		<div class="col-md-3">
-					    			<input type="number" class="form-control" id="nbpers" style="width:60px;">
+					    			<input name="nbpers" type="number" class="form-control" id="nbpers" style="width:60px;" value="<?php echo set_value('nbpers'); ?>">
 					    		</div>
 					    		<?php echo form_error('nbpers'); ?>
 				    		</div>
@@ -166,7 +175,7 @@
 				    	</div>
 				    	<div class="form-group col-md-6">
 				    		<label class="" for="youtube"><i class="fa fa-youtube text-primary"></i> Lien youtube: </label>
-					    	<input name="youtube" type="url" class="form-control" id="youtube" placeholder="Votre chaîne youtube" value="<?php echo set_value('youtube'); ?>">
+					    	<input name="youtube" type="url" class="form-control" id="youtube" placeholder="Votre Lien youtube" value="<?php echo set_value('youtube'); ?>">
 				    		<?php echo form_error('youtube'); ?>
 				    	</div>
 					</div>
@@ -186,13 +195,13 @@
 				  <div class="panel-body">
 					<div class="row form-inline">
 					    <div class="form-group col-md-6">
-				    		<label class="" for="titre1"><i class="fa fa-upload text-primary"></i> Tire no 1: <span class="text-danger"><smal>(.wav)</smal></span> <span class="small text-danger"></span></label>
-					    	<input type="file" id="titre1" name="titre1">
+				    		<label class="" for="titre1"><i class="fa fa-upload text-primary"></i> Titre no 1: <span class="text-danger"><smal>(.wav)</smal></span> <span class="small text-danger"></span></label>
+					    	<input type="file" id="titre1" name="titre1" />
 					    	<?php echo form_error('titre1'); ?>
 				    	</div>
 				    	<div class="form-group col-md-6">
-				    		<label class="" for="titre2"><i class="fa fa-upload text-primary"></i> Tire no 2: <span class="text-danger"><smal>(.wav)</smal></span> <span class="small text-danger"></span></label>
-					    	<input type="file" id="titre2" name="titre2">
+				    		<label class="" for="titre2"><i class="fa fa-upload text-primary"></i> Titre no 2: <span class="text-danger"><smal>(.wav)</smal></span> <span class="small text-danger"></span></label>
+					    	<input type="file" id="titre2" name="titre2" />
 					    	<?php echo form_error('titre2'); ?>
 				    	</div>
 					</div>
@@ -209,9 +218,9 @@
 	</div>
 
 	<!-- Javascript libaries -->
-	<script src="assets/jquery/jquery.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/jquery.urlive/jquery.urlive.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/jquery/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/jquery.urlive/jquery.urlive.min.js"></script>
 
 	<!-- Scripts loader -->
 	<script>
